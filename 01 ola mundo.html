@@ -9,8 +9,20 @@
     <script>
         //let serve para declarar variaveis
         // nome é uma variavel
-        let nome = prompt('Qual é seu nome?')
-        alert('Oláaaaaa' + nome)
+        //Peça para o usuario inseir um num e analise se é par ou ímpar
+
+        let num = parseInt(prompt('Informe um n. inteiro'))
+        if(isNaN(num)) { //Conversão do parseInt Falhou
+            alert('ERRO: O valor Informado não é um n.')
+        }
+         Else if(num%2===0){
+             alert('O n.informado ( '+ num + ') é par!')
+         }
+         Else {
+             alert('O num informado ('+ num+') é impar')
+         }
+
+        }
 
     </script>
 

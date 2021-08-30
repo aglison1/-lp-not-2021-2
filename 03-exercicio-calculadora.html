@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <html>
+    <script>
+        //solicite ao usuário ára informar dois numeros e um operador matemático
+        //você usará tres promts(), um para cada numero e o terceiro para o operador
+        //aceite os seguintes operadores
+        // + => adição
+        // - => subtração
+        // *, X ou x => multiplicação
+        // ou : => divisão
+        // Efetue o cálculo de acordo com o perador informado
+        // Informe o resultado utilizado documente.write()
+
+        let num1 = Number(prompt('Informe 2 nº. Digite o Primeiro:'))
+
+        let op = Number(prompt('Informe a operação:'))
+
+        let num2 = Number(prompt('Informe 2 nº. Digite o Segundo:'))
+    
+        let resultado
+
+        if (op === '+') {
+            alert('Sua operação é de Soma')
+            resultado = num1 + num2
+            document.write(' o Resultado da Sua Adição é:' + resultado)
+        }
+        else if( op === '-'){
+            alert('Sua operação é de Subtração')
+            resultado = num1 - num2
+            document.write(' o Resultado da Sua Subtração é:' + resultado)
+        }
+        else if( op === '*'|| op=== 'X' op === 'x'){
+            alert('Sua operação é de Multiplicação')
+            resultado = num1*num2
+            document.write(' o Resultado da Sua Multiplicação é:' + resultado)
+        }
+        else if( op === '/'|| op=== ':'){
+            alert('Sua operação é de Divisão')
+            resultado = num1/num2
+            document.write(' o Resultado da Sua Multiplicação é:' + resultado)
+        }
+        else {
+            alert('Is not a Number or Operation!')
+        }
+
+    </script>
+</head>
+</html>
