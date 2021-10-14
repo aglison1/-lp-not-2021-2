@@ -20,7 +20,7 @@
             do {
                 diaNascimento = parseInt(prompt('Informe o dia do seu Nascimento:'))
                                
-            } while (isNaN(diaNascimento)) || diaNascimento<1 || diaNascimento>31)
+            } while (isNaN(diaNascimento) || diaNascimento<1 || diaNascimento>31)
                 document.write('Insira um valor de 1 a 31')
         
         /*
@@ -33,7 +33,7 @@
             do {
                 mesNascimento = parseInt(prompt('Informe o Mês do seu Nascimento:'))
                                
-            } while (isNaN(mesNascimento)) || mesNascimento<1 || mesNascimento>12)
+            } while (isNaN(mesNascimento) || mesNascimento<1 || mesNascimento>12)
                 document.write('Insira um valor de 1 a 12')
 
         /*
@@ -92,7 +92,7 @@
             case 2: 
                  document.write("Casa Lacastre")
                  break
-            default
+            default:
                  document.write("Casa Smilinguido")
          }
     
