@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova1_refeita</title>
+    <script>
+        /*
+        1. Crie um arquivo HTML com o nome Prova1.html e insira nele a seção
+        <script>, como fazemos em aula.
+        
+        2. Peça ao usuário para informar seu dia de nascimento. Valide para
+        que o dia informado seja um número inteiro válido e esteja na faixa
+        entre 1 e 31. A solicitação deverá ser repetida até que se consiga 
+        um dia válido.
+        */  
+
+        let diaNascimento
+            do {
+                diaNascimento = parseInt(prompt('Informe o dia do seu Nascimento:'))
+                               
+            } while (isNaN(diaNascimento)) || diaNascimento<1 || diaNascimento>31)
+                document.write('Insira um valor de 1 a 31')
+        
+        /*
+        3. Solicite ao usuário que informe o mês do seu nascimento. Valide para
+        que o mês informado seja um número inteiro válido e esteja entre 1 e 12.
+        Repita a solicitação enquanto não obtiver um mês válido.
+        */
+        
+        let mesNascimento
+            do {
+                mesNascimento = parseInt(prompt('Informe o Mês do seu Nascimento:'))
+                               
+            } while (isNaN(mesNascimento)) || mesNascimento<1 || mesNascimento>12)
+                document.write('Insira um valor de 1 a 12')
+
+        /*
+        4. Por fim, peça ao usuário para informar seu ano de nascimento. Além 
+        de ser um número inteiro válido, o ano informado deve estar entre 1921
+        (inclusive) e 2021 (inclusive). Assim como nos casos anteriores, a
+        pergunta deverá ser repetida enquanto uma resposta válida não for
+        conseguida.
+        */
+
+        let anoNascimento
+                do {
+                    anoNascimento = parseInt(prompt('Informe o Ano do Seu Nascimento'))
+                } while (isNaN(anoNascimento) || anoNascimento>=1921 || anoNascimento<=2021)
+                document.write('O Ano precisa estar entre 1921 a 2021')
+            
+
+        /*
+        5. Declare uma função que receba o dia, o mês e o ano. Dentro dela, some 
+        os valores do ano e do mês e multiplique o resultado pelo valor do dia. 
+        A função deverá retornar o resto do valor obtido no cálculo anterior por 4.
+        
+        Efetua o cálculo da casa de destino utilizando informações do dia,
+        do mês e do ano de nascimento do aluno
+        */ 
+        
+        //Declaração da função 
+        
+        function operacao1(diaNascimento,mesNascimento,anoNascimento{
+             let calculo 
+             calculo = (anoNascimento+mesNascimento)*diaNascimento
+              return  calculo%4    
+        }
+
+        /*
+        6. Efetue uma chamada à função declarada na etapa 5 e utilize uma estrutura
+        switch..case para analisar o retorno da função. Informe com document.write()
+        qual a casa a que o usuário pertence, conforme o esquema a seguir:
+            ◦ Retorno da função igual a 0: Casa Gado Demais
+            ◦ Retorno da função igual a 1: Casa Galo de Rinha
+            ◦ Retorno da função igual a 2: Casa Lacraste
+            ◦ Retorno da função igual a 3: Casa Smilingüido
+
+        */
+       let determinarCasa
+         determinarCasa = calculo
+        
+         switch(determinarCasa)
+         {
+            case 0:
+                 document.write("Casa Gado Demais")
+                 break
+            case 1:
+                 document.write("Casa Galo de Rinha")
+                 break
+            case 2: 
+                 document.write("Casa Lacastre")
+                 break
+            default
+                 document.write("Casa Smilinguido")
+         }
+    
+    </script>
+   
+</head>
+
+<body>
+    
+</body>
+</html>
