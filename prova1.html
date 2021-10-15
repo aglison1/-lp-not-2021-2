@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prova1_refeita</title>
     <script>
@@ -21,7 +21,7 @@
                 diaNascimento = parseInt(prompt('Informe o dia do seu Nascimento:'))
                                
             } while (isNaN(diaNascimento) || diaNascimento<1 || diaNascimento>31)
-                document.write('Insira um valor de 1 a 31')
+                document.write(`O dia Informado é: ${diaNascimento}.<br>`)
         
         /*
         3. Solicite ao usuário que informe o mês do seu nascimento. Valide para
@@ -34,7 +34,7 @@
                 mesNascimento = parseInt(prompt('Informe o Mês do seu Nascimento:'))
                                
             } while (isNaN(mesNascimento) || mesNascimento<1 || mesNascimento>12)
-                document.write('Insira um valor de 1 a 12')
+                document.write(`O mês Informado é: ${mesNascimento}.<br>`)
 
         /*
         4. Por fim, peça ao usuário para informar seu ano de nascimento. Além 
@@ -47,8 +47,8 @@
         let anoNascimento
                 do {
                     anoNascimento = parseInt(prompt('Informe o Ano do Seu Nascimento'))
-                } while (isNaN(anoNascimento) || anoNascimento>=1921 || anoNascimento<=2021)
-                document.write('O Ano precisa estar entre 1921 a 2021')
+                } while (isNaN(anoNascimento) || anoNascimento<1921 || anoNascimento>2021)
+                    document.write(`O ano Informado é: ${anoNascimento}.<br>`)
             
 
         /*
@@ -62,9 +62,8 @@
         
         //Declaração da função 
         
-        function operacao1(diaNascimento,mesNascimento,anoNascimento{
-             let calculo 
-             calculo = (anoNascimento+mesNascimento)*diaNascimento
+        function operacao1(diaNascimento,mesNascimento,anoNascimento){
+             let calculo = (anoNascimento+mesNascimento)*diaNascimento
               return  calculo%4    
         }
 
@@ -78,8 +77,7 @@
             ◦ Retorno da função igual a 3: Casa Smilingüido
 
         */
-       let determinarCasa
-         determinarCasa = calculo
+       let determinarCasa = operacao1(diaNascimento,mesNascimento,anoNascimento)
         
          switch(determinarCasa)
          {
