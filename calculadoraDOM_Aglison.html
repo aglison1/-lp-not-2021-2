@@ -73,7 +73,10 @@
 
             let num1 = parseInt(primeiroNum.value)
             let num2 = parseInt(segundoNum.value)
-           
+            let calc
+
+            console.log({num1},primeiroNum.value)
+                       
             if (isNaN(num1) || isNaN(num2)){
                 alert('Insira um Número Válido')
                 return false
@@ -103,7 +106,6 @@
 
             if(checkFormulario()){
 
-                let calc
                 switch(operacao.selectedIndex){
                     case 0:
                     calc = num1+num2
