@@ -30,7 +30,7 @@
     
     <div>
         <label for= "primeiroNum">Primeiro Número</label>
-        <input id = "primeiroNum">
+        <input id = "primeiroNum" type="number">
     </div>
 
     <div>
@@ -46,7 +46,7 @@
 
     <div>
         <label for = "segundoNum">Segundo Número</label>
-        <input if ="segundoNum">
+        <input if ="segundoNum" type ="number">
     </div>
 
     <div>
@@ -66,30 +66,33 @@
 
         //Validando Formulário
 
-        function checkFormulario()
-        {
-            if (isNaN(primeiroNum) || isNaN(segundoNum) {
+        function checkFormulario(){
+
+            let num1 = parseInt(primeiroNum.value)
+            let num2 = parseInt(segundoNum.value)
+           
+            if (isNaN(num1) || isNaN(num2){
                 alert('Insira um Número Válido')
-                primeiroNum.focus()
                 return false
             }
-            
-           
-            if(primeiroNum.value ==''){
+                                
+            if(num1 ==''){
                 alert('Insira um Número para Calcular')
                 primeiroNum.focus()
                 return false
             }
-            if(segundoNum.value ==''){
+            if(num2 ==''){
                 alert('Insira um Segundo Número para Calcular')
-                segundoNum.focus
+                segundoNum.focus()
                 return false
             }
+            if(num2== '0' && operacao.selectedIndex =='3')
+                alert('Não é possivel dividir por zero')
+                segundoNum.focus()
+                return false
             
         }
-            return true  
-            
-        //O fórmulário é valido
+        return true  //Após o check se OK O fórmulário é valido
 
         function showResult(){
 
@@ -98,16 +101,16 @@
             let calc
             switch(operacao.selectedIndex){
                 case 0:
-                    calc = primeiroNum.value + segundoNum.value
+                    calc = num1+num2
                     break
                 case 1:
-                    calc = primeiroNum.value - segundoNum.value
+                    calc = num1-num2
                     break
                 case 2:
-                    calc = primeiroNum*segundoNum
+                    calc = num1*num2
                     break
                 default:
-                    calc = primeiroNum/segundoNum
+                    calc = num1/num2
             }
                 alert(calc)
 
