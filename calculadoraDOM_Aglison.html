@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM_AglisonGondim</title>
+    <style>
+        /*Espaçamento das div´s*/
+
+        label {
+            display:block;
+        }
+        *{
+            font-family:Calibri,Arial,Sans;
+        }
+        div, button {
+            margin-bottom: 20px ;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Calculadora DOM - by AglisonGondim</h1>
+    
+    <div>
+        <label for= "primeiroNum">Primeiro Número</label>
+        <input id = "primeiroNum">
+    </div>
+
+    <div>
+        <label for = "operacao"> Operação</label>
+        <select id = "operacao">
+        <option>Selecione</option>
+        <option>Soma (+)</option>
+        <option>Subtração (-)</option>
+        <option>Multiplicação (X)</option>
+        <option>Divisão (:)</option>
+        </select>
+    </div>
+
+    <div>
+        <label for = "segundoNum">Segundo Número</label>
+        <input if ="segundoNum">
+    </div>
+
+    <div>
+        <button id="calcular">calcular</button>
+    </div>
+
+    <script>
+        /* Captura de Elementos HTML */
+
+        const primeiroNum = document.querySelector('#primeiroNum')
+        const segundoNum = document.querySelector('#segundoNum')
+        const calcular = document.querySelector('#calcular')
+
+        //Validando Formulário
+
+        function checkFormulario()
+        {
+            if (isNaN(primeiroNum) || isNaN(segundoNum) {
+                alert('Insira um Número Válido')
+                primeiroNum.focus()
+                return false
+            }
+            
+           
+            if(primeiroNum.value ==''){
+                alert('Insira um Número para Calcular')
+                primeiroNum.focus()
+                return false
+            }
+            if(segundoNum.value ==''){
+                alert('Insira um Segundo Número para Calcular')
+                segundoNum.focus
+                return false
+            }
+            
+        }
+            return true   //O fórmulário é valido
+
+        function showResult(){
+            //Após a validação do formulário mostra o resultado
+
+            if checkFormulario()
+        }
+
+
+    </script>
+
+
+       
+</body>
+</html>
