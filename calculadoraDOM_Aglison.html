@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora DOM_AglisonGondim</title>
     <style>
-        /*Espaçamento das div´s*/
+
+        /*Formatação CSS das div´s*/
 
         label {
             display:block;
@@ -23,6 +24,9 @@
 </head>
 <body>
     <h1>Calculadora DOM - by AglisonGondim</h1>
+    
+
+    <!-- Criando as divs -->    
     
     <div>
         <label for= "primeiroNum">Primeiro Número</label>
@@ -48,6 +52,9 @@
     <div>
         <button id="calcular">calcular</button>
     </div>
+
+    <!--Final das divs, Início do Sript-->
+
 
     <script>
         /* Captura de Elementos HTML */
@@ -80,10 +87,14 @@
             }
             
         }
-            return true   //O fórmulário é valido
+            return true  
+            
+        //O fórmulário é valido
 
         function showResult(){
+
             //Após a validação do formulário mostra o resultado
+
             let calc
             switch(operacao.selectedIndex){
                 case 0:
@@ -98,14 +109,15 @@
                 default:
                     calc = primeiroNum/segundoNum
             }
-                
+                alert(calc)
 
         }
 
+        // Evendo DOM Clique para Calcular e Mostrar o Resultado
+
+        calcular.addEventListener('click',showResult)
 
     </script>
-
-
-       
+      
 </body>
 </html>
