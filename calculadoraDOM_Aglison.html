@@ -33,10 +33,10 @@
         <label for = "operacao"> Operação</label>
         <select id = "operacao">
         <option>Selecione</option>
-        <option>Soma (+)</option>
-        <option>Subtração (-)</option>
-        <option>Multiplicação (X)</option>
-        <option>Divisão (:)</option>
+        <option>Soma</option>
+        <option>Subtração</option>
+        <option>Multiplicação</option>
+        <option>Divisão</option>
         </select>
     </div>
 
@@ -55,6 +55,7 @@
         const primeiroNum = document.querySelector('#primeiroNum')
         const segundoNum = document.querySelector('#segundoNum')
         const calcular = document.querySelector('#calcular')
+        const operacao = document.querySelector('#operacao')
 
         //Validando Formulário
 
@@ -83,8 +84,22 @@
 
         function showResult(){
             //Após a validação do formulário mostra o resultado
+            let calc
+            switch(operacao.selectedIndex){
+                case 0:
+                    calc = primeiroNum.value + segundoNum.value
+                    break
+                case 1:
+                    calc = primeiroNum.value - segundoNum.value
+                    break
+                case 2:
+                    calc = primeiroNum*segundoNum
+                    break
+                default:
+                    calc = primeiroNum/segundoNum
+            }
+                
 
-            if checkFormulario()
         }
 
 
