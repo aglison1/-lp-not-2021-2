@@ -52,6 +52,8 @@
     <div>
         <button id="alert">calcular</button>
     </div>
+    
+    <div id="resultado"></div>
 
     <!--Final das divs, Início do Sript-->
 
@@ -63,6 +65,7 @@
         const segundoNum = document.querySelector('#segundoNum')
         const exibirAlert = document.getElementById('alert')
         const operacao = document.querySelector('#operacao')
+        const resultado = document.querySelector('#resultado')
         
         //Validando Formulário
 
@@ -92,18 +95,11 @@
                 return false
             }
             return true  //Após o check se OK O fórmulário é valido 
-        }
-       
-function qualquer(){
-    alert( 'teste de exibição')
-    return true
-}
+            }        
 
-        function showResult(){
 
-            //Após a validação do formulário mostra o resultado
-            let num1 = parseInt(primeiroNum.value)
-            let num2 = parseInt(segundoNum.value)
+             //Após a validação do formulário mostra o resultado
+          
 
             if(checkFormulario()){
 
@@ -122,19 +118,17 @@ function qualquer(){
                     
                     break
                     default:
-                    calc = num1/num2
-                    
-                
+                    calc = num1/num2 
                 }
+                resultado.innerText =calc.toLocaleString('pt-br')
             }
-            
                 
         }
     
         
      // Evendo DOM Clique para Calcular e Mostrar o Resultado            
     
-    exibirAlert.addEventListener('click',showResult)
+    exibirAlert.addEventListener('click',checkFormulario)
     </script>
       
 </body>
