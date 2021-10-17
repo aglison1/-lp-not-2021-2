@@ -46,11 +46,11 @@
 
     <div>
         <label for = "segundoNum">Segundo Número</label>
-        <input if ="segundoNum" type ="number">
+        <input id ="segundoNum" type ="number">
     </div>
 
     <div>
-        <button id="calcular">calcular</button>
+        <button id="alert">calcular</button>
     </div>
 
     <!--Final das divs, Início do Sript-->
@@ -61,9 +61,9 @@
 
         const primeiroNum = document.querySelector('#primeiroNum')
         const segundoNum = document.querySelector('#segundoNum')
-        const calcular = document.querySelector('#calcular')
+        const exibirAlert = document.getElementById('alert')
         const operacao = document.querySelector('#operacao')
-
+        
         //Validando Formulário
 
         function checkFormulario(){
@@ -71,7 +71,7 @@
             let num1 = parseInt(primeiroNum.value)
             let num2 = parseInt(segundoNum.value)
            
-            if (isNaN(num1) || isNaN(num2){
+            if (isNaN(num1) || isNaN(num2)){
                 alert('Insira um Número Válido')
                 return false
             }
@@ -86,40 +86,55 @@
                 segundoNum.focus()
                 return false
             }
-            if(num2== '0' && operacao.selectedIndex =='3')
+            if(num2== '0' && operacao.selectedIndex =='3'){
                 alert('Não é possivel dividir por zero')
                 segundoNum.focus()
                 return false
-            
+            }
+            return true  //Após o check se OK O fórmulário é valido 
         }
-        return true  //Após o check se OK O fórmulário é valido
+       
+function qualquer(){
+    alert( 'teste de exibição')
+    return true
+}
 
         function showResult(){
 
             //Após a validação do formulário mostra o resultado
+            let num1 = parseInt(primeiroNum.value)
+            let num2 = parseInt(segundoNum.value)
 
-            let calc
-            switch(operacao.selectedIndex){
-                case 0:
+            if(checkFormulario()){
+
+                let calc
+                switch(operacao.selectedIndex){
+                    case 0:
                     calc = num1+num2
+                    
                     break
-                case 1:
+                    case 1:
                     calc = num1-num2
+                    
                     break
-                case 2:
+                    case 2:
                     calc = num1*num2
+                    
                     break
-                default:
+                    default:
                     calc = num1/num2
+                    
+                
+                }
             }
-                alert(calc)
-
+            
+                
         }
-
-        // Evendo DOM Clique para Calcular e Mostrar o Resultado
-
-        calcular.addEventListener('click',showResult)
-
+    
+        
+     // Evendo DOM Clique para Calcular e Mostrar o Resultado            
+    
+    exibirAlert.addEventListener('click',showResult)
     </script>
       
 </body>
