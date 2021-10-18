@@ -90,7 +90,7 @@
                 num2.focus()
                 return false
             }
-            if(num2.value== '0' && operacao.selectedIndex =='3'){
+            if(num2.value== '0' && operacao.selectedIndex =='4'){
                 alert('Não é possivel dividir por zero')
                 Num2.focus()
                 return false
@@ -105,27 +105,30 @@
           
             if(checkFormulario()){
             
-            let num1 = parseInt(primeiroNum.value)
-            let num2 = parseInt(segundoNum.value)
+            let opernum1 = parseInt(num1.value) //parseInt para n. inteiros correto parsefloat
+            let opernum2 = parseInt(num2.value)
             
 
                 switch(operacao.selectedIndex){
                     case 1:
-                    calc = num1+num2
+                    calc = opernum1+opernum2
                     
                     break
                     case 2:
-                    calc = num1-num2
+                    calc = opernum1-opernum2
                     
                     break
                     case 3:
-                    calc = num1*num2
+                    calc = opernum1*opernum2
                     
                     break
                     default:
-                    calc = num1/num2 
+                    calc = opernum1/opernum2 
                 }
-                showresult.innerText =calc.toLocaleString('pt-br')
+                showresult.innerText =calc.toLocaleString('pt-br') 
+                //ou showresult.TextContent = cal.toFixed(3) para dar casas decimais
+                //para Aparecer o Resultado em Negrito
+                // showresult.innerHTML = '<strong>' + calc.toLocaleString('pt-br') + '</strong>'
             }
         
         }
