@@ -66,66 +66,73 @@
         const opselection = document.querySelector('#operacao')
         const calcOperation = document.querySelector('#calcular')
         const showresult = document.querySelector('#resultado')
-        
+        let calc
+
          //Validando Formulário--------------------------------------------------->
 
         function checkFormulario(){
 
-            let num1 = parseInt(primeiroNum.value)
-            let num2 = parseInt(segundoNum.value)
-            let calc
+            
 
                             
-            if (isNaN(num1) || isNaN(num2)){
+            if (isNaN(num1.value) || isNaN(num2.value)){
                 alert('Insira um Número Válido')
                 return false
             }
                                 
-            if(num1 ==''){
+            if(num1.value ==''){
                 alert('Insira um Número para Calcular')
-                primeiroNum.focus()
+                Num1.focus()
                 return false
             }
-            if(num2 ==''){
+            if(num2.value ==''){
                 alert('Insira um Segundo Número para Calcular')
-                segundoNum.focus()
+                num2.focus()
                 return false
             }
-            if(num2== '0' && operacao.selectedIndex =='3'){
+            if(num2.value== '0' && operacao.selectedIndex =='3'){
                 alert('Não é possivel dividir por zero')
-                segundoNum.focus()
+                Num2.focus()
                 return false
             }
             return true 
-        }        
+        }    
+        
+        function execut() {
 
-
+        
          //Após a validação do formulário mostra o resultado----------------------->
           
             if(checkFormulario()){
+            
+            let num1 = parseInt(primeiroNum.value)
+            let num2 = parseInt(segundoNum.value)
+            
 
                 switch(operacao.selectedIndex){
-                    case 0:
+                    case 1:
                     calc = num1+num2
                     
                     break
-                    case 1:
+                    case 2:
                     calc = num1-num2
                     
                     break
-                    case 2:
+                    case 3:
                     calc = num1*num2
                     
                     break
                     default:
                     calc = num1/num2 
                 }
-                calcOperation.innerText =calc.toLocaleString('pt-br')
+                showresult.innerText =calc.toLocaleString('pt-br')
             }
+        
+        }
                
             // Evento DOM Clique para Calcular e Mostrar o Resultado---------------->           
     
-        showresult.addEventListener('click',checkFormulario)
+        calcOperation.addEventListener('click',execut)
 
     </script>
       
