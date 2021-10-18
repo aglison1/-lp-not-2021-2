@@ -7,7 +7,7 @@
     <title>Calculadora DOM_AglisonGondim</title>
     <style>
 
-        /*Formatação CSS das div´s*/
+        /*Formatação CSS das div´s---------------------------------------------*/
 
         label {
             display:block;
@@ -26,7 +26,7 @@
     <h1>Calculadora DOM - by AglisonGondim</h1>
     
 
-    <!-- Criando as divs -->    
+    <!-- Criando as divs ------------------------------------------------------->    
     
     <div>
         <label for= "primeiroNum">Primeiro Número</label>
@@ -50,24 +50,24 @@
     </div>
 
     <div>
-        <button id="alert">calcular</button>
+        <button id="calcular">calcular</button>
     </div>
     
     <div id="resultado"></div>
 
-    <!--Final das divs, Início do Sript-->
+    <!--Final das divs, Início do Script----------------------------------------->
 
 
     <script>
-        /* Captura de Elementos HTML */
+        /* Captura de Elementos HTML ------------------------------------------*/
 
-        const primeiroNum = document.querySelector('#primeiroNum')
-        const segundoNum = document.querySelector('#segundoNum')
-        const exibirAlert = document.getElementById('alert')
-        const operacao = document.querySelector('#operacao')
-        const resultado = document.querySelector('#resultado')
+        const num1 = document.querySelector('#primeiroNum')
+        const num2 = document.querySelector('#segundoNum')
+        const opselection = document.querySelector('#operacao')
+        const calcOperation = document.querySelector('#calcular')
+        const showresult = document.querySelector('#resultado')
         
-        //Validando Formulário
+         //Validando Formulário---------------------------------------------------
 
         function checkFormulario(){
 
@@ -75,8 +75,7 @@
             let num2 = parseInt(segundoNum.value)
             let calc
 
-            console.log({num1},primeiroNum.value)
-                       
+                            
             if (isNaN(num1) || isNaN(num2)){
                 alert('Insira um Número Válido')
                 return false
@@ -97,13 +96,12 @@
                 segundoNum.focus()
                 return false
             }
-            return true  //Após o check se OK O fórmulário é valido 
-            }        
+            return true 
+        }        
 
 
-             //Após a validação do formulário mostra o resultado
+         //Após a validação do formulário mostra o resultado-----------------------
           
-
             if(checkFormulario()){
 
                 switch(operacao.selectedIndex){
@@ -122,15 +120,13 @@
                     default:
                     calc = num1/num2 
                 }
-                resultado.innerText =calc.toLocaleString('pt-br')
+                calcOperation.innerText =calc.toLocaleString('pt-br')
             }
-                
-        }
+               
+            // Evento DOM Clique para Calcular e Mostrar o Resultado----------------            
     
-        
-     // Evendo DOM Clique para Calcular e Mostrar o Resultado            
-    
-    exibirAlert.addEventListener('click',checkFormulario)
+        showresult.addEventListener('click',checkFormulario)
+
     </script>
       
 </body>
