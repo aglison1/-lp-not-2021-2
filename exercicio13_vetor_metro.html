@@ -7,22 +7,6 @@
     <title>Exercício13_vetor</title>
     <script>
         /*
-        
-            O ano é 2119. A prefeita Enza Valentina Faleiros Trajano 
-            Bittar da Silva inaugura a primeira linha do Metrô de Franca, 
-            no sentido norte-sul, com as seguintes estações: Santa Teresinha,
-            Estação, Centro, Jardim Lima e Aeroporto I.
-            
-            1) Crie um vetor vazio e depois insira as estações no
-                vetor. Faça um loop for TRADICIONAL para exibir as 
-                estações e depois passe um traço horizontal (<hr>).
-            No ano seguinte, a linha foi expandida com a inauguração
-                das estações City Petrópolis, no extremo norte, e Aeroporto
-                IV, no extremo sul.
-                
-            2) Insira as novas estações no vetor nas posições apropriadas.
-                Faça um loop FOR..OF para exibir as estações e depois
-                passe um traço horizontal (<hr>).
             Já em 2125, foi criada a estação Vila Imperador, entre
             as estações Santa Teresinha e Estação, para atender à grande
             demanda da maior universidade da cidade, a Fatec de Franca.
@@ -48,7 +32,16 @@
                 passe um traço horizontal (<hr>).
         */
        
-        //Questao 1
+        /*Questao 1-----------------------------------------------------
+        1) O ano é 2119. A prefeita Enza Valentina Faleiros Trajano 
+        Bittar da Silva inaugura a primeira linha do Metrô de Franca, 
+        no sentido norte-sul, com as seguintes estações: Santa Teresinha,
+        Estação, Centro, Jardim Lima e Aeroporto I.
+        Crie um vetor vazio e depois insira as estações no
+        vetor. Faça um loop for TRADICIONAL para exibir as 
+        estações e depois passe um traço horizontal (<hr>).
+        */
+
         let estacoes = []
 
         estacoes.push('Santa Teresinha')
@@ -64,13 +57,34 @@
         }
          document.write('<hr>')
 
-        //Continuação Questão 1
+        /* Questão 2----------------------------------------------------
+        No ano seguinte, a linha foi expandida com a inauguração
+        das estações City Petrópolis, no extremo norte, e Aeroporto
+        IV, no extremo sul.
+                
+        2) Insira as novas estações no vetor nas posições apropriadas.
+        Faça um loop FOR..OF para exibir as estações e depois
+        passe um traço horizontal (<hr>).
+        */
 
-        estacoes.splice(5, 0, 'City Petrópolis-Ex.Norte')
-        document.write(estacoes + '<br>')
+        for(let i = estacoes.length-1; i>4 ; i++){
+            document.write(estacoes [i]+  '<br>')
+        }
+         document.write('<hr>')
 
-        estacoes.splice(6, 0, 'Aeroporto IV -Ex.Sul')
-        document.write(estacoes + '<br>')
+        /* Opçoes q nao deram certo:
+            estacoes[5] = 'City Petrópolis-Extremo.Norte'
+            document.write(estacoes+'<br>')
+
+            estacoes[6]='Aeroporto IV -Extremo.Sul'
+            document.write(estacoes+'<br>')
+
+            estacoes.splice(5, 0, 'City Petrópolis-Ex.Norte')
+            document.write(estacoes + '<br>')
+
+            estacoes.splice(6, 0, 'Aeroporto IV -Ex.Sul')
+            document.write(estacoes + '<br>')
+        */
 
 
 
