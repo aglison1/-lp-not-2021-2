@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <title>Refeita_prova1</title>
    
 <script>
-let text = "10"
 
+// Para as promts
+
+let diaNasc, mesNas, anoNasc
+
+do {
+    diaNasc = parseInt(prompt('Informe o Dia do seu Nascimento Jovem:'))
+} while (isNaN(diaNasc) || diaNasc<1 || diaNasc>31)
+
+do {
+    mesNas = parseInt(prompt('Agora Informe o Mês Meu Amigo:'))
+}while  (isNaN(mesNas) || mesNas<1 || mesNas >12)
+
+do {
+    anoNasc = parseInt(prompt('Ano 1921 a 2021:'))
+} while (isNaN(anoNasc)|| anoNasc<1921 | anoNasc>2021)
+
+//Para determinar a casa
+
+function determinarcasa(dia,mes,ano) {
+    let somaparametro  = (ano + mes)*dia
+    return somaparametro%4
+}
+
+let casa = determinarcasa(diaNasc,mesNas,anoNasc)
+
+    switch(casa){
+        case 0 :
+            document.write('Time1')
+            break
+        case 1: 
+            document.write('Time2')
+            break
+        case 2: 
+            document.write('Time3')
+        default :
+            document.write('Time4')     
+    }
 
 </script>
 
