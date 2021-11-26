@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando Manipulacao de objetos </title>
+
+    <script>
+
+        /*Podemos gerar representar um Cadastro de Varias Formas, aqui aprsentamos 3 formas:
+         ____FORMA 01 utilizando um Vetor 
+         ____FORMA 02 utilizando a orma de objeto e exibindo com o JSON na Tela ou no console.log
+         ____FORMA 03 Criando um Vetor Vazio com as propriedades desse objeto e inserindo os objetos nele
+        
+        */
+        
+        /* FORMA 01_________________ Minicadastro na forma de vetor
+        let paciente01 = ['Turing', '34', '1.56', 'turing@gmail.com', '80']
+        let imc = paciente01[4] / paciente01[2] ** 2
+        document.write(`O IMC de ${paciente3[0]} é ${imc3.toFixed(4)}<br>`)
+        document.write('<hr>')
+        */
+
+        //FORMA 02_________________refazendo o paciente01  na forma de objeto
+    
+       let paciente01 = {}
+        paciente01.nome = 'Turing'
+        paciente01.idade = 34
+        paciente01.altura = 1.56
+        paciente01.email ='turing@gmail.com'
+        paciente01.peso = 80
+
+        let imc = paciente01.peso/paciente01.altura**2
+
+        document.write(`o IMC do ${paciente01.nome} é ${imc.toFixed(2)}<br>`)
+        document.write(JSON.stringify(paciente01))
+        console.log({paciente01}) //Para aparecere no console do Navegador
+        document.write('<hr>')
+
+        //inserindo mais outras propriedades, essas nao vao aparecer na tela apenas no console.log
+        paciente01['Doc Id'] = '234.754.9764'
+        paciente01['País']='Brazil'
+
+        /*  Para novas propriedades serem adicionadas ao objetos temos que
+            criar um vetor vazio, com as mesmas propriedades (ex. Nome, idade..etc)
+            fazer percorrer esse vetor para entao inserir nas novas propriedades adicionadas
+            observe..se nao for as mesmas propriedades ele não copia para dentro do vetor, 
+            acusa undefined
+        
+        
+            FORMA 03_________________ Minicadastro na forma de vetor
+            criando um vetor com as propriedades do objeto, note que apenas altura 
+            tem a mesma propriedade do objeto.
+        */
+
+        const propriedades = [
+            'Apelido', 
+            'idade do Cabra',
+            'altura',
+            'email do Elemento',
+            'peso Bruto',
+            'Doc Id desse aí',
+            'País do Abestado'
+        ]
+        for(let i =0; i<propriedades.length;i++){
+            document.write(`${propriedades[i]} => ${paciente01[propriedades[i]]}<br>`)
+        }
+        
+
+             
+
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
