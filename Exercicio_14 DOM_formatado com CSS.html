@@ -5,9 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício14 DOm refeito</title>
+    <style>
+        body{
+            padding: 50px;
+            background-color: rgb(235, 220, 155);
+        }
+        h1,h2{
+            color: green;
+            border-bottom: 1px solid indigo;
+        }
+        img{   
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px;
+        }
+    </style>
 </head>
 <body>  
-    <h1> Título Criação dos Novos Elementos em uma Lista</h1>
+    <h1 style="text-align: center">Título Criação dos Novos Elementos em uma Lista</h1>
     <ol>
     </ol>
     <script>            
@@ -16,11 +30,16 @@
 
         const itemBelarmina = document.createElement('li')//---------
         itemBelarmina.textContent = 'Belarmina'
+        itemBelarmina.style.color ='blue'
+        itemBelarmina.style.fontStyle ='italic'
+        itemBelarmina.style.fontVariant ='small-caps'
         lista.appendChild(itemBelarmina)
+
      
         const itemLuzinete = document.createElement('li') //---------
-        itemLuzinete.textContent = 'Belarmina'
+        itemLuzinete.textContent = 'Luzinete'
         lista.appendChild(itemLuzinete)
+
 
         const itemRoberval = document.createElement('li')//----------
         itemRoberval.textContent = 'Roverval'
@@ -37,6 +56,13 @@
         document.body.appendChild(texto1)
         document.body.insertBefore(texto1,lista)
 
+        //Adicionando uma Imagem
+
+        const fig1 = document.createElement('img')
+        fig1.src = 'brasilia.jpg'
+        fig1.style.display = 'block'
+        fig1.style.margin = '20px auto'
+        document.body.insertBefore(fig1, document.querySelector('h2'))
 
 
     </script>
