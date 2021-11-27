@@ -70,21 +70,43 @@
 
 
     <!---Parte Script e Captura dos Elementos--->
-<script>
+    <script>
 
-    const divs = document.querySelector('div')
-    const nomeCompleto = document.querySelector('#nome-completo')
-    const numRg = document.querySelector('#numrg')
-    const numCpf = document.querySelector('#numcpf')
+        const divs = document.querySelector('div')
+        const nomeCompleto = document.querySelector('#nome-completo')
+        const numRg = document.querySelector('#numrg')
+        const numCpf = document.querySelector('#numcpf')
+        const endImovel = document.querySelector('#endimovel')
+        const taManho = document.querySelector('#tamanho')
+        const vaLor = document.querySelector('#valor')
+        const tipoImovel = document.querySelector('#tipoimovel')
     
 
-    //Criando o Subtitulo
-     const subtitulo = document.createElement('h2')
+        //Criando o Subtitulo
+        const subtitulo = document.createElement('h2')
         subtitulo.textContent = 'Dados Cadastrais'
         document.body.insertBefore(subtitulo,divs)
+        
+
+        //Criando os objetos 
+    
+        const cliente1 ={}
+        cliente1['Nome Completo'] = 'Seucreison'
+        cliente1.rg = 23
+        cliente1['CPF'] = 34342
+        cliente1['Endereço do Imóvel'] = 'endImovel'
+        cliente1['Tamanho do Imóvel'] = 344
+        cliente1['Valor do Imóvel'] = 98887
+        cliente1['Tipo do Imóvel'] = tipoImovel
+
+        document.write(JSON.stringify(cliente1))
 
 
-</script>
+
+    
+
+
+    </script>
 
 </body>
 </html>
