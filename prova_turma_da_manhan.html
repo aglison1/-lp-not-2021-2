@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova da Manhan</title>
+    <style>
+        body {
+            background-color: lavender;
+            padding: 50px; 
+        }
+        h1 {
+            color: blue;
+            padding: 10px;
+        }
+        div{
+            margin-bottom: 10px
+        }
+        label {
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Parte de DOM-->
+    <h1 style="text-align: center">Cadastro de Imóveis</h1>
+    
+    <div>
+        <label for = "nome-completo">Nome Completo</label>
+        <input id = "nome-completo">
+    </div>
+    
+    <div>
+        <label for = "numrg">Nº do RG</label>
+        <input id ="numrg">
+    </div>
+
+    <div>
+        <label for ="numcpf">Nº do CPF</label>
+        <input id="numcpf">
+    </div>
+
+    <div>
+        <label for = "endimovel">Endereço do Imóvel</label>
+        <input id = "endimovel">
+    </div>
+    
+    <div>
+        <label for = "tamanho">Tamanho do Imóvel</label>
+        <input id = "tamanho">
+    </div>
+
+    <div>
+        <label for = "valor">Valor do Imóvel</label>
+        <input id = "valor">
+    </div>
+
+    <div>
+        <label for="tipoimovel">Tipo do Imóvel</label>
+        <select id="tipoimovel">
+            <option>(Selecione)</option>
+            <option>Alvenaria</option>
+            <option>Madeira</option>
+            <option>Mista</option>
+        </select>
+    </div>
+
+
+    <!---Parte Script e Captura dos Elementos--->
+<script>
+
+    const divs = document.querySelector('div')
+    const nomeCompleto = document.querySelector('#nome-completo')
+    const numRg = document.querySelector('#numrg')
+    const numCpf = document.querySelector('#numcpf')
+    
+
+    //Criando o Subtitulo
+     const subtitulo = document.createElement('h2')
+        subtitulo.textContent = 'Dados Cadastrais'
+        document.body.insertBefore(subtitulo,divs)
+
+
+</script>
+
+</body>
+</html>
