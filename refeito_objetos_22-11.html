@@ -36,7 +36,8 @@
         pet1['Nome-da-Mãe'] = 'Bobinha'
 
         document.write(JSON.stringify(pet1)) 
-        document.write('<hr>')
+
+        document.write('<hr>') //______________________________________________________
 
 
         //Para aparecer como liste, deve inserir o objeto criado dentro de um vetor base
@@ -55,23 +56,37 @@
             document.write(`${vetpet[i]} : ${pet1[vetpet[i]]}<br>`)
         }
 
-        document.write('<hr>')
+        document.write('<hr>')  //______________________________________________________
 
-        // Exibindo usando também o for...of
+
+        // Exibindo a mesma coisa só que  usando também o for...of
 
         for(let qualquer of vetpet){
             document.write(`${qualquer} : ${pet1[qualquer]}<br>`)
         }
 
-        document.write('<hr>')
+        document.write('<hr>') //______________________________________________________
 
-        // Exibindo usando também o for...in
+        // Para EXIBIR APENAS AS PROPRIEDADES usando também o for...in
 
         for( let qualquer2 in pet1){
             document.write(`${qualquer2} :`)
         }
+        
+        document.write('<hr>') //______________________________________________________
 
+        //Copiando o mesmo vetor base copiando o
+        //valor das caracteristicas (propriedades) do primeiro pet
 
+        let pet2 ={...pet1}
+        //pergunta-se, o que vamos mudar?
+        pet2.nome ='Tiwongfive'
+        pet2.sexo ='Indefinido'
+        pet2['Nome-do-Pai'] = 'Pagão o Imortal'
+        
+        for(let qualquer3 in pet2){
+            document.write(`${qualquer3} : ${pet2[qualquer3]}<br>`)
+        }
 
 
 
