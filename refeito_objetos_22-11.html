@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objetos dia 22-11-2021</title>
+    <title>Exercício de Vetores</title>
+    <style>
+        body{
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
+    <h1 style="text-align: center">Exercícios Vetores</h1>
     <script>
+        //Criando o Subtitulo 1
+        const titulo = document.querySelector('h1')
+        const faixa = document.querySelector('hr')
+        
+        
+        const subtitulo1 = document.createElement('h2')     
+        subtitulo1.textContent = 'Exercício 1'
+        document.body.insertBefore(subtitulo1,faixa)
 
         /*
             EXERCICIOS VETORES E OBJETOS
 
-            1) Declare um objeto pet1 que represente um cão e preencha as
+            EXERCICIO 1) Declare um objeto pet1 que represente um cão e preencha as
             seguintes propriedades:
             - nome
             - raça
@@ -40,7 +54,7 @@
         document.write('<hr>') //______________________________________________________
 
 
-        //Para aparecer como liste, deve inserir o objeto criado dentro de um vetor base
+        //Para aparecer como lista, deve inserir o objeto criado dentro de um vetor base
         //Deve-se criar um loop que percorra o vetor
 
         const vetpet =
@@ -76,10 +90,10 @@
         document.write('<hr>') //______________________________________________________
 
         //Copiando o mesmo vetor base copiando o
-        //valor das caracteristicas (propriedades) do primeiro pet
+        //valor das caracteristicas (propriedades) do primeiro pet  
 
         let pet2 ={...pet1}
-        //pergunta-se, o que vamos mudar?
+        //pergunta-se, o que vamos mudar? o restante das propriedades vai ser copiado auto!
         pet2.nome ='Tiwongfive'
         pet2.sexo ='Indefinido'
         pet2['Nome-do-Pai'] = 'Pagão o Imortal'
@@ -88,8 +102,66 @@
             document.write(`${qualquer3} : ${pet2[qualquer3]}<br>`)
         }
 
+        document.write('<hr>') //___________________________________________
+
+        /*___________________________________________________________________Pág2*/
+
+        const subtitulo2 = document.createElement('h3')
+        subtitulo2.textContent = 'Exercício 2'
+        document.body.appendChild(subtitulo2)
 
 
+        /*
+            EXERCICIO 2)    
+            A)Crie um vetor vazio.
+        */ 
+        /*       
+            2) Usando o método de inserção NO INÍCIO do vetor, coloque os seguintes Estados
+               no vetor:
+               São Paulo
+               Santa Catarina
+               Rio Grande do Sul
+               Rio de Janeiro
+               Paraná
+               Minas Gerais
+               Espírito Santo     
+               
+            3) Percorra o vetor com um loop for..of,
+            crie um item de lista para cada um dos elementos do vetor e 
+            insira-o na lista não ordenada.
+        */
+        let estados = []
+
+        estados.unshift('São Paulo')
+        estados.unshift('Santa Catarina')
+        estados.unshift('Rio Grande do Sul')
+        estados.unshift('Rio de Janeiro')
+        estados.unshift('Paraná')
+        estados.unshift('Minas Gerais')
+        estados.unshift('Espírito Santo')
+
+        //Para aparecer como lista, deve inserir o objeto criado dentro de um vetor base
+        //Deve-se criar um loop que percorra o vetor
+       
+        const lista1 = document.createElement('ul')      
+        for(let qualquer4 of estados){
+            const itemdalista = document.createElement('ul')
+            itemdalista.textContent= qualquer4
+            lista1.appendChild(itemdalista)
+            document.write(qualquer4 + '<br>')
+        }
+
+        document.write('<hr>') //___________________________________________
+
+        const listaord = document.createElement('li')
+        for(let qualquer4 of estados){
+            const itemdalista = document.createElement('li')
+            itemdalista.textContent= qualquer4
+            lista1.appendChild(itemdalista)
+            document.write(qualquer4 + '<br>')
+        }
+
+       
 
     </script>
     
