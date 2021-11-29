@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos dia 22-11-2021</title>
+</head>
+<body>
+    <script>
+
+        /*
+            EXERCICIOS VETORES E OBJETOS
+
+            1) Declare um objeto pet1 que represente um cão e preencha as
+            seguintes propriedades:
+            - nome
+            - raça
+            - cor
+            - sexo
+            - nome do pai (nome da propriedade com espaços)
+            - nome da mãe (nome da propriedade com espaços)
+            2) Crie um objeto pet2, copiando do primeiro:
+            let pet2 = pet1
+            E troque algumas das características de pet2
+            3) Use dois for..in para listar os objetos: pet1 e pet2
+            
+        */
+
+        const pet1= {}
+        pet1.nome ='Pintado'
+        pet1['raça'] = 'Vira-Lata'
+        pet1.cor = 'pintado'
+        pet1.sexo= 'M'
+        pet1['Nome-do-Pai'] = 'Zulu'
+        pet1['Nome-da-Mãe'] = 'Bobinha'
+
+        document.write(JSON.stringify(pet1)) 
+        document.write('<hr>')
+
+
+        //Para aparecer como liste, deve inserir o objeto criado dentro de um vetor base
+        //Deve-se criar um loop que percorra o vetor
+
+        const vetpet =
+        [
+            'nome',
+            'raça',
+            'cor',
+            'sexo',
+            'Nome-do-Pai',
+            'Nome-da-Mãe',
+        ]
+        for(let i=0; i<vetpet.length; i++){
+            document.write(`${vetpet[i]} : ${pet1[vetpet[i]]}<br>`)
+        }
+
+        document.write('<hr>')
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
