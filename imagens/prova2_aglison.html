@@ -82,19 +82,20 @@
      <script>
             
         const multipl = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-
-        
+   
         //Questão 4
-        function calc1(valor1,valor2){
-            
+        function recebnum(num1){
+
+        for(let i =0; i<multipl.length;i++){
+            document.write(`${multipl[i]} => ${calc1[multipl[i]]}<br>`) 
+               
         let num1 =parseInt(document.querySelector('#select'))
         let num2 = parseInt(document.querySelector(multipl))
         
         let resultado = valor1*valor2
         return resultado
 
-        for(let i =0; i<multipl.length;i++){
-            document.write(`${multipl[i]} => ${calc1[multipl[i]]}<br>`)
+        
    
         }
 
