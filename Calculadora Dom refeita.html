@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refazendo A Calculadora</title>
+    <style>
+        label{
+            display: block;
+        }
+        *{
+            font-family: 'calibri', 'Arial Narrow', Arial, sans-serif;
+        } 
+
+    </style>
+</head>  
+
+<body>
+    <h1> Calculadora </h1>
+
+    <div>
+        <label for = "num1label"> Primeiro Número</label>
+        
+        <input id ="num1input" type="number">
+    </div>
+
+    <div>
+        <label for ="operlabel"> Operação Matemática</label>
+
+        <select id = "operselect">
+            <option>Soma</option>
+            <option>Subtração</option>
+            <option>Multiplicação</option>
+            <option>Divisão</option>
+        </select>  
+    </div>
+
+    <div>
+        <label for = "num2label">Segundo Número</label>
+
+        <input id ="num2input" type="number">
+    </div>
+    <div>
+        <button id = "calcbutton">Calcular</button>
+    </div>
+
+    <div id = "result"></div>
+
+
+
+    <!-- Final dos itens DOM e Início da Manipulação DOM-->
+    <script>
+        //captura dos elementos DOM criados
+
+        const num1 = document.querySelector('#num1input')
+        const num2 = document.querySelector('#num2input')
+        const oper = document.querySelector('#operselect')
+        const calc = document.querySelector('#calcbutton')
+        const resultado = document.querySelector('#result')
+
+        //check do formulario
+
+        function checkFormulario(){
+
+            if( isNaN(num1.value) && isNaN(num2.value)){
+                alert('Insira um número válido!')
+                return false
+            }
+            if( num1.value == ''){
+                alert('Não tem Nº amigo!')
+                return false
+            }
+            if(num2.value == ''){
+                alert('Não tem Nº também!')
+                return false
+            }
+            if( num2.value == 0 && oper.selectIndex == 4){
+                alert('Amigo! Não dá pra dividir por zero nessa calculadora!')
+                num2.focus()
+                return false
+            }
+
+            return true
+
+        }
+        
+        function mostrarcalc(){
+
+            let resulcalc
+
+            switch(oper.selectIndex){
+                case 1:
+                    resultcalc = num1.value + num2.value
+                break
+                case 2:
+                    resulcalc = num1.value - num2.value
+                break
+                case 3:
+                    resulcalc = num1.value*num2.value
+                break
+                default:
+                    resultcalc = num1.value/num2.value
+            }
+            resultado.innerText =resultcalc.toLocaleString('pt-br') 
+
+        }
+
+        //Evento com o objeto
+
+        calc.addEventListener('click',mostrarcalc)
+
+
+
+    </script>
+   
+    
+</body>
+</html>
