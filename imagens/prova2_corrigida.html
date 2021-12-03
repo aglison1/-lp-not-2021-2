@@ -81,7 +81,7 @@
     
 </head>
 <body>
-     <div>
+    <div>
         <h1>Tabuada</h1>
 
         <div>
@@ -105,38 +105,39 @@
         </div>
 
         <div id="tabuada"></div>
-        </div>
+    </div>
 
-        <!--Início da Secção e Manipulação DOM-->
-     <script>
+    <!--Início da Secção e Manipulação DOM-->
+    <script>
             
         const multipl = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
         //Questão 3 - Captura de Elementos HTML
 
         const tabuada = document.querySelector('#tabuada')
-        const numselect = document.querySelector('#select')
-        const buttontabuada = document.querySelector('#button')
+        const numselect = document.querySelector('select')
+        const buttontabuada = document.querySelector('button')
 
 
    
         //Questão 4
         function recebnum(num1){
 
-            for(let i = multipl.length-1; i>=0 ;i--)
+            for(let i = multipl.length-1; i>=0 ;i--){
             
             // Quetão 5 criação do novo parágrado dentro do  loop...for
-            const text1= document.createElement('p')
+            let text1= document.createElement('p')
             text1.textContent = `${num1} x ${multipl[i]} = ${num1*multipl[i]}`
-            tabuada.appendChild(text1)  
+            tabuada.appendChild(text1)
+            }
         }
         
         
-        function validação(){
+        function validacao(){
 
             tabuda.textContent = ''
 
-            if(numselect.selectedIndex <=0){
+            if(numselect.selectedIndex <=0) {
                 alert('Selecione um numero para Exibir a tabuada!')
                 numselect.focus() 
             }
@@ -145,12 +146,10 @@
             }
         }
         
-        buttontabuada.addEventListener('click',recebnum)
+        buttontabuada.addEventListener('click',validacao)
+     
     
-
-        
-    
-         </script>  
+    </script>  
 
 
 </body>
