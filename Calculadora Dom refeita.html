@@ -22,13 +22,14 @@
     <div>
         <label for = "num1label"> Primeiro Número</label>
         
-        <input id ="num1input" type="number">
+        <input id ="num1input">
     </div>
 
     <div>
         <label for ="operlabel"> Operação Matemática</label>
 
         <select id = "operselect">
+            <option>Selecione</option>
             <option>Soma</option>
             <option>Subtração</option>
             <option>Multiplicação</option>
@@ -49,7 +50,7 @@
 
 
 
-    <!-- Final dos itens DOM e Início da Manipulação DOM-->
+    <!-- Final dos itens DOM e Início da Manipulação DOM--------------------------------->
     <script>
         //captura dos elementos DOM criados
 
@@ -58,24 +59,25 @@
         const oper = document.querySelector('#operselect')
         const calc = document.querySelector('#calcbutton')
         const resultado = document.querySelector('#result')
+        let resulcalc
 
         //check do formulario
 
         function checkFormulario(){
 
-            if( isNaN(num1.value) && isNaN(num2.value)){
-                alert('Insira um número válido!')
+            if( isNaN(num1.value) || isNaN(num2.value)){
+                alert('Vc quer digitar vai pro Word Cachaceiro!')
                 return false
             }
             if( num1.value == ''){
-                alert('Não tem Nº amigo!')
+                alert('Somar com o que?? me diz?!')
                 return false
             }
             if(num2.value == ''){
-                alert('Não tem Nº também!')
+                alert('No Segundo Campo não tem numero jovem..aja paciencia!!')
                 return false
             }
-            if( num2.value == 0 && oper.selectIndex == 4){
+            if( num2.value == '0' && oper.selectedIndex == '4'){
                 alert('Amigo! Não dá pra dividir por zero nessa calculadora!')
                 num2.focus()
                 return false
@@ -87,22 +89,28 @@
         
         function mostrarcalc(){
 
-            let resulcalc
+            if(checkFormulario()){
+                let opernum1 = parseInt(num1.value)
+                let opernum2 = parseInt(num2.value)
+            
+                    switch(operselect.selectedIndex){
+                        case 1:
+                        resulcalc = opernum1+opernum2
 
-            switch(oper.selectIndex){
-                case 1:
-                    resultcalc = num1.value + num2.value
-                break
-                case 2:
-                    resulcalc = num1.value - num2.value
-                break
-                case 3:
-                    resulcalc = num1.value*num2.value
-                break
-                default:
-                    resultcalc = num1.value/num2.value
+                        break
+                        case 2:
+                        resulcalc = opernum1-opernum2
+
+                        break
+                        case 3:
+                        resulcalc = opernum1*opernum2
+
+                        break
+                        default:
+                        resulcalc = opernum1/opernum2 
+                    }
+                resultado.innerText =resulcalc.toLocaleString('pt-br') 
             }
-            resultado.innerText =resultcalc.toLocaleString('pt-br') 
 
         }
 
