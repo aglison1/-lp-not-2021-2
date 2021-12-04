@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM Refeita 2</title>
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        div{
+            margin-bottom: 20px 
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1> Calculadora Básica</h1>
+    <!-- Criandos os objects--------------------------------------->
+    <div>
+        <label for="firstnum">Primeiro Número</label>  <!-- primeiro objeto-->
+        <input id="firstnum" type="number">
+    </div>
+
+    <div>
+        <label for="operacao">Operação</label>          <!-- Segundo objeto-->
+        <select id="operacao">
+            <option>Selecione</option>
+            <option>Soma</option>
+            <option>Subtração</option>
+            <option>Multiplicação</option>
+            <option>Divisão</option>
+        </select>
+    </div>
+    <div>
+        <label for="secondnum">Segundo Número</label>    <!-- terceiro objeto-->
+        <input id="secondnum" type="number">
+    </div>
+    <div> 
+        <button id="calcular">Calcular</button>          <!-- quarto objeto-->
+    </div>
+
+    <div id="resultado"></div>                           <!-- quinto objeto-->
+
+    <!-- Início do Script e captura dos objetos ----------------------------->
+
+    <script>
+        //Capturando os objetos
+        const num1 = document.querySelector('#firstnum')
+        const num2 = document.querySelector('#secondnum')
+        const oper = document.querySelector('#operacao')
+        const calc = document.querySelector('#calcular')
+        const res = document.querySelector('#resultado')
+        let resultoper
+
+        function mostrarresultado (){
+            let opernum1 = parseInt(num1.value)
+            let opernum2 = parseInt(num2.value)
+            switch(operacao.selectedIndex){
+                case 1:
+                resultoper = opernum1 + opernum2
+                break
+                case 2:
+                resultoper = opernum1 - opernum2
+                break
+                case 3:
+                resultoper = opernum1*opernum2
+                break
+                default:
+                resultoper = opernum1/opernum2
+            }
+            res.innerText=resultoper.toLocaleString('pt-br') 
+        }
+
+        calc.addEventListener('click', mostrarresultado)
+
+        //a importancia de criar uma primeira funcao que valide os dados do formulario
+        // para em seguida chama-la dentro da outra função
+
+    </script>
+    
+    
+</body>
+</html>
