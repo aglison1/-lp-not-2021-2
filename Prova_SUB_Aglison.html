@@ -144,9 +144,7 @@
         
         function recebnum(num1){
 
-        for(let i = vet.length; i<0 ;i++){
-
-        tabuada.appendChild(text1)
+        for(let i = 0; i < vet.length; i++){
         }
         }
 
@@ -171,12 +169,15 @@
                 return false         
             }
 
+            //Caso passe na validação, será  insirido o número no início do vetor.
             else{
                 recebnum(vet.unshift[i])         
             }
           
             return true 
-        }   
+        }
+        
+        buttonum.addEventListener('click',validacao)
 
 
 
